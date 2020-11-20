@@ -4,3 +4,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+  height: 100vh;
+  background: linear-gradient(to bottom ,
+        #009a88 0%,
+        #009a88 15%,
+        #d9dbd4 15%,
+        #d9dbd4 100% );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+
+
+.container {
+    display: flex;
+     width: 80%;
+     height: 90%;
+     background: #fff;
+
+}
