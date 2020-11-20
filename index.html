@@ -11,11 +11,41 @@
   <body>
     <div id="root" class="container">
       <aside class="sidebar">
-
+        <section class="profile">
+          <img src="./img/avatar_io.jpg" alt="My avatar">
+           <p>{{'Nome Utente'}}</p> <!-- dato preso con vue -->
+               <!-- Icons -->
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </section>
+        <!-- sezione notifiche -->
+        <section class="box-notifiche">
+          <div class="box-bell">
+            <i class="far fa-bell-slash"></i>
+            <span>Ricevi notifiche di nuovi messaggi</span>
+          </div>
+            <div class="box-link">
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+        </section>
       </aside>
-      <div class="content-chat">
 
-      </div>
+       <!-- main content -->
+      <main class="content">
+        <section class="content-header"></section>
+         <div class="profile-contact">
+           <img src="img/avatar_1.jpg" alt="Contact 1">
+           <p>{{'Michele'}}</p> <!-- dato preso con vue -->
+
+
+
+        </div>
+        <section class="content-main"></section>
+        <section class="content-footer"></section>
+      </main>
+
+
 
     </div>
     <script src="js/main.js" charset="utf-8"></script>

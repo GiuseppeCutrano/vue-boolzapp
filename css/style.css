@@ -22,7 +22,116 @@ body{
 .container {
     display: flex;
      width: 80%;
-     height: 90%;
+     height: 95%;
      background: #fff;
 
+}
+
+
+.sidebar {
+    flex-basis: 35%;
+    background: #ffffff;
+}
+/* css per profile */
+.profile {
+    padding: 10px 10px 15px;
+    border-right: 1px solid #ccc;
+}
+
+.profile img {
+    float: left;
+    width: 50px;
+    border-radius: 30px;
+    margin-top: 2px;
+}
+
+.profile p {
+    float: left;
+    margin-top: 18px;
+
+}
+
+.profile::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+.profile .fa-circle-notch {
+    color: #b1b1b1;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+.profile .fa-comment-alt {
+    color: #b1b1b1;
+    margin-left: 15px;
+}
+
+.profile .fa-ellipsis-v {
+    color: #b1b1b1;
+    margin-left: 15px;
+}
+
+
+.fa-circle-notch,
+.fa-comment-alt,
+.fa-ellipsis-v {
+    cursor: pointer;
+    font-size: 20px;
+}
+/* fine css per profile */
+
+
+/* css per box notifiche */
+.box-notifiche{
+  height: 70px;
+  background-color: #78ddfe;
+
+}
+
+
+
+.fa-bell-slash{
+  border-radius: 50%;
+  background-color: white;
+  font-size: 30px;
+  float: left;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 15px;
+  color: #78ddfe;
+}
+
+.box-bell span{
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+
+.box-link a{
+  float: left;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+/* fine css box notifiche */
+
+
+.profile-contact{
+  padding: 10px 10px 15px;
+}
+
+.profile-contact img{
+  float: left;
+  width: 50px;
+  border-radius: 30px;
+}
+
+
+.profile-contact p{
+  float: left;
+  margin-top: 18px;
+  margin-left: 10px;
 }
