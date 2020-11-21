@@ -4,13 +4,43 @@ const myApp = new Vue({
     // Nostro account
     user: {
       name: 'Nome Utente',
-      avatar: 'Propio avatar'
+      avatar: '_io'
     },
      // contatti
      contacts:[
        {
          name:'Michele',
-         avatar:'avatar_1'
+         avatar:'_1',
+         visible: true,
+         messagges:[{
+           // qui vanno i messaggi
+         }]
+       },
+       {
+         name:'Fabio',
+         avatar:'_2',
+         visible: true,
+         messagges:[{
+           // qui vanno i messaggi
+         }]
+       },
+       {
+         name:'Samuele',
+         avatar:'_3',
+         visible: true,
+         messagges:[{
+           // qui vanno i messaggi
+         }]
+
+       },
+       {
+         name:'Luisa',
+         avatar:'_6',
+         visible: true,
+         messagges:[{
+           // qui vanno i messaggi
+         }]
+
        }
      ]
 
