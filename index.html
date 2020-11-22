@@ -10,52 +10,67 @@
   </head>
   <body>
     <div id="root" class="container">
-      <aside class="sidebar">
+          <aside class="sidebar">
 
-        <section class="profile">
-          <img src="./img/avatar_io.jpg" alt="My avatar">
-           <p>{{'Nome Utente'}}</p> <!-- dato preso con vue -->
-               <!-- Icons -->
-          <i class="fas fa-circle-notch"></i>
-          <i class="fas fa-comment-alt"></i>
-          <i class="fas fa-ellipsis-v"></i>
-        </section>
-        <!-- sezione notifiche -->
-        <div class="box-notifiche">
-            <i class="far fa-bell-slash fa-2x"></i>
-            <div class="box-activate">
-              <div class="ricev-notifiche">
-                Ricevi notifiche nuovi messagi!
+            <section class="profile">
+              <img src="./img/avatar_io.jpg" alt="My avatar">
+               <p>{{'Nome Utente'}}</p> <!-- dato preso con vue -->
+                   <!-- Icons -->
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </section>
+            <!-- sezione notifiche -->
+            <div class="box-notifiche">
+                <i class="far fa-bell-slash fa-2x"></i>
+                <div class="box-activate">
+                  <div class="ricev-notifiche">
+                    Ricevi notifiche nuovi messagi!
+                  </div>
+                  <div class="active-notif">
+                    <a href="#">Attivà notifiche desktop</a>
+                  </div>
+                </div>
               </div>
-              <div class="active-notif">
-                <a href="#">Attivà notifiche desktop</a>
-              </div>
-            </div>
-          </div>
-          <section class="search">
-            <i class="fas fa-search"></i>
-            <input type="text"
-            placeholder="Cerca chat">
-          </section>
-          <!-- contacts section -->
-          <div class="contacts">
-              <div v-for="(contact, index) in contacts" class="contact">
-                   <img v-bind:src="`img/avatar${contact.avatar}.jpg`"  alt="Contact 1">
-                   <p>{{contact.name}}</p>
-              </div>
-           </div>
-      </aside>
+              <section class="search">
+                <i class="fas fa-search"></i>
+                <input type="text"
+                placeholder="Cerca chat">
+              </section>
+              <!-- contacts section -->
+              <div class="contacts">
+                  <div v-for="(contact, index) in contacts" class="contact">
+                       <img v-bind:src="`img/avatar${contact.avatar}.jpg`"  alt="Contact 1">
+                       <p>{{contact.name}}</p>
+                  </div>
+               </div>
+          </aside>
 
-       <!-- main content -->
-      <main class="content">
-        <section class="content-header"></section>
-         <div class="profile-contact">
-           <img src="img/avatar_1.jpg" alt="Contact 1">
-           <p>{{'Michele'}}</p> <!-- dato preso con vue -->
+                <!-- main content -->
+               <div class="main-box">
+                    <div class="top-box">
+                      <div class="nav">
+                          <div class="nav-box-left">
+                            <div class="avatar-box">
+                              <img src="img/avatar_1.jpg"alt="">
+                            </div>
+                            <div class="name-chat">
+                              <p>Michele</p>
+                              <p>Ultimo accesso oggi alle</p>
+                            </div>
+                          </div>
+                          <div class="icon-box right">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </div>
+                        </div>
+
+                      </div>
 
 
 
-        </div>
+
         <section class="content-main"></section>
         <section class="content-footer"></section>
       </main>

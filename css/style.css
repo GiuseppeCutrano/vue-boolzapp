@@ -17,16 +17,17 @@ body{
 }
 .container {
     display: flex;
-     width: 80%;
-     height: 90%;
+     width: 85%;
      height: 95%;
+
      background: #fff;
 
 }
 
 
 .sidebar {
-    flex-basis: 35%;
+
+    flex-basis: 35vh;
     background: #ffffff;
 }
 /* css per profile */
@@ -47,8 +48,9 @@ body{
     margin-top: 18px;
 
 }
-.contact img
-.contact p,
+
+
+/* .contact p, */
 .profile::after {
     content: '';
     display: table;
@@ -57,30 +59,30 @@ body{
 
 
 .profile .fa-circle-notch {
-    color: #b1b1b1;
+
     margin-left: 45%;
     margin-top: 20px;
 }
 
 .profile .fa-comment-alt {
-    color: #b1b1b1;
+    
     margin-left: 15px;
 }
 
 .profile .fa-ellipsis-v {
-    color: #b1b1b1;
+
     margin-left: 15px;
 }
-
-
+.fa-paperclip,
+.fa-search,
 .fa-circle-notch,
 .fa-comment-alt,
 .fa-ellipsis-v {
+  color: #b1b1b1;
     cursor: pointer;
     font-size: 20px;
 }
 /* fine css per profile */
-
 
 /* css per box notifiche */
  .box-notifiche {
@@ -133,21 +135,61 @@ body{
     color: #b5b9bb;
 }
 
-.profile-contact{
-  padding: 10px 10px 15px;
+/* top nav css */
+.main-box{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+  }
+
+
+.nav{
+    width: 100%;
+    height: 80px;
+    background-color:lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
 
-.profile-contact img{
-  float: left;
-  width: 50px;
-  border-radius: 30px;
+
+
+.avatar-box {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+
 }
 
+.icon-box{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-.profile-contact p{
-  float: left;
-  margin-top: 18px;
-  margin-left: 10px;
+}
+
+.icon-box.right{
+    width: 18%;
+}
+
+.avatar-box img{
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+.nav-box-left {
+    width: 38%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 /* contacts */
 .contacts {
