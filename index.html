@@ -12,14 +12,17 @@
     <div id="root" class="container">
           <aside class="sidebar">
 
-            <section class="profile">
-              <img src="./img/avatar_io.jpg" alt="My avatar">
-               <p>{{'Nome Utente'}}</p> <!-- dato preso con vue -->
-                   <!-- Icons -->
-              <i class="fas fa-circle-notch"></i>
-              <i class="fas fa-comment-alt"></i>
-              <i class="fas fa-ellipsis-v"></i>
-            </section>
+            <div class="sidebar-left">
+                    <div class="sidebar-left-logo">
+                        <img src="./img/avatar_io.jpg" alt="">
+                        <span>{{user.name}}</span>
+                    </div>
+                    <div class="icons-left">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
             <!-- sezione notifiche -->
             <div class="box-notifiche">
                 <i class="far fa-bell-slash fa-2x"></i>
@@ -67,12 +70,26 @@
                         </div>
 
                       </div>
+                      <section class="content-main">
+                        
+                      </section>
 
 
 
 
-        <section class="content-main"></section>
-        <section class="content-footer"></section>
+            <section class="cont-footer">
+               <a href="#"><i class="far fa-smile"></i></a>
+               <!-- My message -->
+
+                    <input
+                       type="text"
+                       placeholder="Scrivi un messaggio"
+
+                       @keyup.enter="insertMessage"
+                    >
+
+               <a href="#"><i class="fas fa-microphone"></i></a>
+            </section>
       </main>
 
 
