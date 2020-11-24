@@ -36,12 +36,10 @@
                             </div>
                           </div>
                         </div>
-                        <div class="searchFriend">
                             <div class="search">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <input class="searchInput" type="text" placeholder="Cerca o inizia una nuova chat" v-model="inserisciNome" @keyup="ricercaNome">
-                        </div>
+                  						<i class="fas fa-search"></i>
+                  						<input  type="text" name="search-contact" id="" placeholder="Cerca o inizia una nuova chat">
+                  					</div>
                             <div class="contacts_list" v-for="(friend, index) in contacts" @click="clickFriend(index)">
                                 <li>
                                     <a href="#">
