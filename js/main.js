@@ -6,13 +6,9 @@ var app = new Vue(
             nuovoMsg: '',
             risposta: 'ok',
             inserisciNome: '',
-            user: [
-                {
-                    name: 'Nome Utente',
-                    avatar: '_io'
-                }
+            nameUser: 'Nome Utente',
+            avatarUser: 'img/avatar_io.jpg',
 
-            ],
             contacts: [
                 {
                     name: 'Michele',
