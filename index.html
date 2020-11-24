@@ -9,92 +9,85 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <div id="root" class="container">
-          <aside class="sidebar">
+            <div id="root">
+                <div class="container">
 
-            <div class="sidebar-left">
-                    <div class="sidebar-left-logo">
-                        <img src="./img/avatar_io.jpg" alt="">
-                        <span>{{user.name}}</span>
-                    </div>
-                    <div class="icons-left">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </div>
-            <!-- sezione notifiche -->
-            <div class="box-notifiche">
-                <i class="far fa-bell-slash fa-2x"></i>
-                <div class="box-activate">
-                  <div class="ricev-notifiche">
-                    Ricevi notifiche nuovi messagi!
-                  </div>
-                  <div class="active-notif">
-                    <a href="#">Attivà notifiche desktop</a>
-                  </div>
-                </div>
-              </div>
-              <section class="search">
-                <i class="fas fa-search"></i>
-                <input type="text"
-                placeholder="Cerca chat">
-              </section>
-              <!-- contacts section -->
-              <div class="contacts">
-                  <div v-for="(contact, index) in contacts" class="contact">
-                       <img v-bind:src="`img/avatar${contact.avatar}.jpg`"  alt="Contact 1">
-                       <p>{{contact.name}}</p>
-                  </div>
-               </div>
-          </aside>
-
-                <!-- main content -->
-               <div class="main-box">
-                    <div class="top-box">
-                      <div class="nav">
-                          <div class="nav-box-left">
-                            <div class="avatar-box">
-                              <img src="img/avatar_1.jpg"alt="">
-                            </div>
-                            <div class="name-chat">
-                              <p>Michele</p>
-                              <p>Ultimo accesso oggi alle</p>
-                            </div>
-                          </div>
-                          <div class="icon-box right">
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-paperclip"></i>
+                    <div class="sidebar">
+                            <div class="sidebar-left">
+                        <div class="sidebar-left-logo">
+                            <img src="./img/avatar_io.jpg" alt="">
+                            <span>{{user.name}}</span>
+                        </div>
+                        <div class="icons-left">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                <!-- sezione notifiche -->
+                      <div class="box-notifiche">
+                          <i class="far fa-bell-slash fa-2x"></i>
+                          <div class="box-activate">
+                            <div class="ricev-notifiche">
+                              Ricevi notifiche nuovi messagi!
+                            </div>
+                            <div class="active-notif">
+                              <a href="#">Attivà notifiche desktop</a>
+                            </div>
                           </div>
                         </div>
+                        <div class="searchFriend">
+                            <div class="search">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <input class="searchInput" type="text" placeholder="Cerca o inizia una nuova chat" v-model="inserisciNome" @keyup="ricercaNome">
+                        </div>
+                            <div class="contacts_list" v-for="(friend, index) in contacts" @click="clickFriend(index)">
+                                <li>
+                                    <a href="#">
+                                        <img :src="friend.avatar" alt="avatar">
+                                    </a>
+                                <div class="nomeAmico">
+                                    <h4>{{ friend.name }}<h4>
 
-                      </div>
-                      <section class="content-main">
-                        
-                      </section>
+                                </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- destra -->
+                    <div class="right">
+                        <!-- right-top -->
+                        <div class="right-top">
+                            <div class="img-contact-right">
+                                <img :src="contacts[contactFriend].avatar" alt="">
+                                <h4> {{contacts[contactFriend].name}} </h4>
+                                <h5>Ultimo accesso oggi alle 15:40</h5>
+                            </div>
+                            <div class="icone-right">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        <!-- right middle -->
+                        </div>
+                        <div class="right-middle">
+                            <div class="right-messages">
+                                <div class="messaggi" v-for="dati in contacts[contactFriend].messages">
+                                    <div :class="dati.status">
+                                {{ dati.message}} </div>
+                            </div>
+                        </div>
+                        </div>
+                            <!-- right bottom -->
+                        <div class="cont-footer">
+                            <i class="far fa-smile"></i>
+                            <input v-on:keyup.enter="inserisciMsg(nuovoMsg)" v-model="nuovoMsg" type="text" placeholder="Scrivi un messaggio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                </div>
+            </div>
 
-
-
-
-            <section class="cont-footer">
-               <a href="#"><i class="far fa-smile"></i></a>
-               <!-- My message -->
-
-                    <input
-                       type="text"
-                       placeholder="Scrivi un messaggio"
-
-                       @keyup.enter="insertMessage"
-                    >
-
-               <a href="#"><i class="fas fa-microphone"></i></a>
-            </section>
-      </main>
-
-
-
-    </div>
-    <script src="js/main.js" charset="utf-8"></script>
-  </body>
+        <script src="js/main.js" charset="utf-8"></script>
+    </body>
 </html>

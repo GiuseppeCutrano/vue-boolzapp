@@ -1,9 +1,9 @@
-/* reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
   height: 100vh;
   background: linear-gradient(to bottom ,
@@ -16,16 +16,40 @@ body{
         align-items: center;
 
 }
-.container {
-     display: flex;
-     width: 85%;
-     height: 95%;
-     background: #fff;
 
-
+img {
+  border-radius: 50%;
+    max-width: 50px;
+    float: left;
 }
 
+.container {
+    width: 1000px;
+    height: 700px;
 
+    display: flex;
+}
+
+.container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.container i {
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* sidebar */
+.container .sidebar{
+    width: 35%;
+    height: 100%;
+    background-color: #e5e5e5;
+    border-right: 1px solid lightgrey;
+    float: left;
+}
 
 .sidebar {
   width: 35%;
@@ -82,28 +106,7 @@ border-radius: 50%;
 background-color: lightgrey;
 }
 
-
-
-.profile::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-
-.fa-paperclip,
-.fa-search,
-.fa-circle-notch,
-.fa-comment-alt,
-.fa-ellipsis-v {
-  color: #b1b1b1;
-    cursor: pointer;
-    font-size: 22px;
-}
-/* fine css per profile */
-
-/* css per box notifiche */
- .box-notifiche {
+.box-notifiche {
   min-height: 80px;
   background: #78ddfe;
   width: 100%;
@@ -131,135 +134,139 @@ background-color: lightgrey;
 
 
 }
-/* fine css box notifiche */
 
-.search {
+/* css search friend */
+.searchFriend {
     width: 100%;
     height: 46px;
     padding: 5px;
     background: #fafafa;
 }
-.search input {
-    width: 100%;
-    height: 35px;
-    padding: 0 80px;
-    background: #fff;
-    border: 1px solid #dddd;
-}
+
+
 .search .fa-search {
     position: absolute;
-    right: 87%;
+
     margin-top: 10px;
     color: #b5b9bb;
 }
 
-/* top nav css */
-.main-box{
-    width: 65%;
+.searchInput {
+    width: 90%;
+    height: 35px;
+    padding: 0 80px;
+    background: #fff;
+    border: 1px solid #dddd;
+    margin-left: 20px;
+}
+
+
+li{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.contacts_list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-
-  }
-
-
-.nav{
-    width: 100%;
-    height: 78px;
-    background-color:lightgrey;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-}
-
-
-
-.avatar-box {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-
-}
-
-.icon-box{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.icon-box.right{
-    width: 18%;
-}
-
-.avatar-box img{
-    width: 100%;
-    border-radius: 50%;
-
-}
-
-.nav-box-left {
-    width: 38%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-/* contacts */
-.contacts {
-    width: 100%;
-    height: 300px;
-    overflow-y: auto;
-}
-.contact {
-    height: 75px;
-    border-bottom: 1px solid #dddd;
-}
-.contact img {
-    width: 60px;
-    margin-left: 15px;
-    margin-top: 10px;
-    border-radius: 30px;
-    float: left;
-}
-.contact p {
-
-    margin-left: 18px;
-
-}
-.contact:hover {
-    background: #e9ebeb;
+    justify-content: center;
+    padding-left: 5px;
     cursor: pointer;
 }
 
 
-/* footer */
 
-.cont-footer {
-  width: 100%;
-  height: 80px;
-  background-color: #ededed;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+/* box main */
+.container .right {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container .right-top {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    padding: 0 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.right-top .img-contact -right{
+    max-width: 50%;
+    float: left;
+    padding-left: 15px;
+
+}
+
+.right-top .img-contact-right img{
+    padding-right: 5px;
+}
+
+.right-top .icone-right{
+    max-width: 50%;
+    float: right;
+
+    padding-right: 15px;
+}
+
+.right-top .icone-right i{
+    padding-left: 10px;
+}
+
+.container .right-middle {
+    height: calc(100% - 140px);
+    padding: 20px;
+    background-image: url('../img/mine.jpg');
+    background-size: cover;
+  
+}
+
+.received {
+    background-color: white;
+    float: left;
+    padding: 15px;
+    margin: 5px 10px 5px 10px;
+    clear: both;
+    border-radius: 10px;
+}
+
+.sent {
+    background-color: #daffb5;
+    float: right;
+    padding: 15px;
+    margin: 5px 10px 5px 10px;
+    clear: both;
+    border-radius: 10px;
+}
+
+.container .cont-footer {
+    height: 70px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cont-footer input {
-  width: 85%;
-    height: 70%;
-    border: none;
+    width: 80%;
+    height: 50px;
     padding: 10px;
-    border-radius: 4px;
-
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
-
-
-.cont-footer  i{
-  font-size: 22px;
-  color:grey;
+.cont-footer i {
+    margin: 20px;
 }
