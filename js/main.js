@@ -5,11 +5,10 @@ var app = new Vue(
             contactFriend: 0,
             nuovoMsg: '',
             risposta: 'ok',
-            // inserisciNome: '',
+            inserisciNome: '',
             nameUser: 'Nome Utente',
             avatarUser: 'img/avatar_io.jpg',
-            filteredContacts:[],
-            searchInput:"",
+            
 
             contacts: [
                 {
@@ -41,17 +40,17 @@ var app = new Vue(
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
-                            message: 'Ciao, che fai?',
+                            message: 'Ciao come stai?',
                             status: 'sent'
                         },
                         {
                             date: '20/03/2020 16:30:55',
-                            message: 'Ciao, sto per uscire.',
+                            message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received'
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Ma sta piovendo!!',
+                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
                     ],
@@ -85,12 +84,12 @@ var app = new Vue(
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao come stai?',
+                            message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Bene grazie.',
+                            message: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
                     ]
@@ -109,10 +108,8 @@ var app = new Vue(
                     message: nuovoMsg,
                     status: 'sent'
                 });
-
                 if (nuovoMsg != '') {
                     this.nuovoMsg = '';
-
                     setTimeout(() => {
                         this.contacts[this.contactFriend].messages.push({
                             date:'',
@@ -122,15 +119,17 @@ var app = new Vue(
                     }, 1000)
                 }
             },
-
-            computed: {
-              filteredContacts() {
-                return this.contacts.filter(contact => {
-                  return contacts.name.toLowerCase().includes(this.searchInput.toLowerCase());
+            ricercaNome() {
+                this.contacts.forEach((contact, i) => {
+                    if (contact.name.toLowerCase().includes(this.inserisciNome)) {
+                        contact.visible = true;
+                        console.log(inserisciNome);
+                    } else {
+                        contact.visible = false;
+                        console.log(inserisciNome);
+                    }
                 });
-              }
-            }
+            },
         }
-
     }
 );
