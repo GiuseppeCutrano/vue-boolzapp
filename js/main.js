@@ -5,9 +5,11 @@ var app = new Vue(
             contactFriend: 0,
             nuovoMsg: '',
             risposta: 'ok',
-            inserisciNome: '',
+            // inserisciNome: '',
             nameUser: 'Nome Utente',
             avatarUser: 'img/avatar_io.jpg',
+            filteredContacts:[],
+            searchInput:"",
 
             contacts: [
                 {
@@ -39,17 +41,17 @@ var app = new Vue(
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
-                            message: 'Ciao come stai?',
+                            message: 'Ciao, che fai?',
                             status: 'sent'
                         },
                         {
                             date: '20/03/2020 16:30:55',
-                            message: 'Bene grazie! Stasera ci vediamo?',
+                            message: 'Ciao, sto per uscire.',
                             status: 'received'
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Ma sta piovendo!!',
                             status: 'sent'
                         }
                     ],
@@ -83,12 +85,12 @@ var app = new Vue(
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            message: 'Ciao come stai?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
+                            message: 'Bene grazie.',
                             status: 'received'
                         }
                     ]
@@ -121,18 +123,13 @@ var app = new Vue(
                 }
             },
 
-            ricercaNome() {
-                this.contacts.forEach((contact, i) => {
-
-                    if (contact.name.toLowerCase().includes(this.inserisciNome)) {
-                        contact.visible = true;
-                        console.log(inserisciNome);
-                    } else {
-                        contact.visible = false;
-                        console.log(inserisciNome);
-                    }
+            computed: {
+              filteredContacts() {
+                return this.contacts.filter(contact => {
+                  return contacts.name.toLowerCase().includes(this.searchInput.toLowerCase());
                 });
-            },
+              }
+            }
         }
 
     }

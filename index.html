@@ -16,7 +16,7 @@
                       <div class="sidebar-left">
                           <div class="sidebar-left-logo">
                               <img :src="avatarUser" alt="">
-                              <span>{{nameUser}}</span>
+                              <h4>{{nameUser}}</h4>
                           </div>
                         <div class="icons-left">
                             <i class="fas fa-circle-notch"></i>
@@ -38,8 +38,20 @@
                         </div>
                             <div class="search">
                   						<i class="fas fa-search"></i>
-                  						<input  type="text" name="search-contact" id="" placeholder="Cerca o inizia una nuova chat">
+                  						<input  type="text" name="search-contact" id="" placeholder="Cerca o inizia una nuova chat"
+                              v-model="searchInput" v-on:keyup="filteredContacts">
                   					</div>
+                            <div class="contacts_list" v-for="(friend, index) in filteredContacts" @click="clickFriend(index)">
+                                <li>
+                                    <a href="#">
+                                        <img :src="friend.avatar" alt="avatar">
+                                    </a>
+                                <div class="nomeAmico">
+                                    <h4>{{ friend.name }}<h4>
+
+                                </div>
+                                </li>
+                            </div>
                             <div class="contacts_list" v-for="(friend, index) in contacts" @click="clickFriend(index)">
                                 <li>
                                     <a href="#">
