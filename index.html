@@ -40,19 +40,9 @@
                             <div class="search">
                   						<i class="fas fa-search"></i>
                   						<input  type="text" name="search-contact" id="" placeholder="Cerca o inizia una nuova chat"
-                              v-model="searchInput" v-on:keyup="filteredContacts">
+                              v-model="inserisciNome" v-on:keyup="ricercaNome">
                   					</div>
-                            <div class="contacts_list" v-for="(friend, index) in filteredContacts" @click="clickFriend(index)">
-                                <li>
-                                    <a href="#">
-                                        <img :src="friend.avatar" alt="avatar">
-                                    </a>
-                                <div class="nomeAmico">
-                                    <h4>{{ friend.name }}<h4>
 
-                                </div>
-                                </li>
-                            </div>
                             <div class="contacts_list" v-for="(friend, index) in contacts" @click="clickFriend(index)">
                                 <li>
                                     <a href="#">

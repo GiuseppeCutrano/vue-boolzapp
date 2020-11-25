@@ -8,7 +8,8 @@ var app = new Vue(
             inserisciNome: '',
             nameUser: 'Nome Utente',
             avatarUser: 'img/avatar_io.jpg',
-            
+
+
 
             contacts: [
                 {
@@ -40,17 +41,17 @@ var app = new Vue(
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
-                            message: 'Ciao come stai?',
+                            message: 'Ciao che fai?',
                             status: 'sent'
                         },
                         {
                             date: '20/03/2020 16:30:55',
-                            message: 'Bene grazie! Stasera ci vediamo?',
+                            message: 'Sto uscendo',
                             status: 'received'
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Ma sta piovendo',
                             status: 'sent'
                         }
                     ],
@@ -84,12 +85,12 @@ var app = new Vue(
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            message: 'Come stai?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
+                            message: 'Bene grazie!',
                             status: 'received'
                         }
                     ]
@@ -119,7 +120,7 @@ var app = new Vue(
                     }, 1000)
                 }
             },
-            ricercaNome() {
+            ricercaNome(inserisciNome) {
                 this.contacts.forEach((contact, i) => {
                     if (contact.name.toLowerCase().includes(this.inserisciNome)) {
                         contact.visible = true;
